@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+# 🥗 Contador de Calorías
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación desarrollada por **Jeziel Leyton** que permite llevar un control de calorías consumidas y quemadas. Diseñada para ser parte de mi portafolio como desarrollador frontend. Esta herramienta permite registrar actividades con sus respectivas calorías y categorizarlas según si son alimentos o ejercicios.
 
-Currently, two official plugins are available:
+## ✨ Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Registro de actividades (consumo o quema de calorías)
+- Cálculo automático de calorías consumidas y quemadas
+- Visualización de resumen
+- Interfaz responsive y estilizada con Tailwind CSS
+- Arquitectura con `useReducer` para manejo eficiente del estado
+- Tipado estricto con TypeScript
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologías utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ [React](https://reactjs.org/)
+- ⛑️ [TypeScript](https://www.typescriptlang.org/)
+- 💨 [Tailwind CSS](https://tailwindcss.com/)
+- ⚙️ [Vite](https://vitejs.dev/) como entorno de desarrollo
+- 📦 Reducers personalizados para manejo de estado
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📂 Estructura del proyecto
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+contadorcalorias/
+├── src/
+│   ├── components/       # Componentes reutilizables
+│   ├── data/             # Datos simulados o estáticos
+│   ├── reducers/         # Reducers para el manejo de estado
+│   ├── types/            # Definiciones de tipos TypeScript
+│   ├── App.tsx           # Componente raíz
+│   └── main.tsx          # Punto de entrada principal
+├── index.html
+├── tailwind.config.js
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧠 Lógica del proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+La aplicación gestiona las actividades mediante `useReducer`, lo que permite:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Agregar nuevas actividades
+- Filtrar por categoría (alimentación o ejercicio)
+- Calcular automáticamente las calorías totales usando `useMemo`
+
+
+
+Este proyecto está disponible bajo la licencia [MIT](LICENSE).
+
+---
+
+Creado  por **Jeziel Leyton**
